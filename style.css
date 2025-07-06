@@ -1,0 +1,167 @@
+/* Donate button container: bottom left, centered horizontally in open area */
+.donate-btn-container {
+  position: fixed;
+  left: 0;
+  /* Move the button up by 10px */
+  top: calc(200px + 60vh - 10px);
+  width: 60vw; /* White area width = 100vw - 40vw yellow */
+  height: calc(100vh - 200px - 60vh + 10px);
+  background: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  pointer-events: none; /* So only the button is clickable */
+  z-index: 2;
+}
+
+/* Donate button style */
+.donate-btn {
+  pointer-events: auto;
+  background: #ffc908;
+  color: #fff;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  border: none;
+  border-radius: 12px;
+  padding: 32px 80px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transition: background 0.2s;
+}
+.donate-btn:hover {
+  background: #ffd84d;
+}
+/* Right third yellow rectangle */
+.right-rectangle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40vw; /* Wider yellow rectangle */
+  height: 100vh;
+  background: #ffc908; /* Crisp yellow */
+  z-index: 1;
+}
+/* Import Poppins Bold font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/* Give the header a blue background strip that goes across the screen. It should be four times the height of the text in the header. The text should be white and centered in the header. The header should be responsive, so it looks good on both desktop and mobile devices. */
+/* The header should have a height of 100px on desktop and 50px on mobile. The text should be 24px on desktop and 16px on mobile. The header should have a padding of 20px on desktop and 10px on mobile. The header should have a margin of 0 on desktop and 10px on mobile. The header should have a background color of #007bff on desktop and #0056b3 on mobile. The header should have a border radius of 5px on desktop and 0 on mobile. */  
+
+/* Make the page take up the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the page background */
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #fff; /* Snow white background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  /* Blue background color */
+  background-color: #003366;
+  width: 100vw; /* Full viewport width */
+  min-height: 200px; /* Back to previous size */
+  color: white;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  /* Move header content to the right and higher up */
+  padding: 30px 80px 40px 80px; /* previous padding */
+  justify-content: flex-start;
+  margin: 0;
+  border-radius: 0; /* Sharp corners */
+  box-sizing: border-box;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12); /* Slightly bigger shadow */
+}
+
+header h1 {
+  /* Make headline bigger */
+  font-size: 56px;
+  margin: 0 0 20px 0; /* More space below for subheadline */
+  line-height: 1.2;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 700;
+}
+
+header .subheadline {
+  /* Style for subheadline text */
+  font-size: 24px;
+  color: white; /* Match header text color */
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 700;
+  max-width: calc(100vw - 40vw - 80px); /* 80px = left padding, 40vw = yellow width */
+  box-sizing: border-box;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header {
+    min-height: 120px;
+    padding: 8px 20px 16px 20px;
+    margin: 0;
+    background-color: #003366;
+    border-radius: 0;
+    width: 100vw;
+    justify-content: flex-start;
+  }
+  header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+  }
+  header .subheadline {
+    font-size: 14px;
+    color: white; /* Match header text color on mobile */
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    max-width: calc(100vw - 40vw - 20px); /* 20px = left padding on mobile */
+    box-sizing: border-box;
+  }
+}
+/* Make the image smaller inside the yellow rectangle */
+.centered-image {
+  max-width: 95%;   /* Image will be no wider than 95% of the rectangle */
+  max-height: 90%;  /* Image will be no taller than 85% of the rectangle */
+  display: block;   /* Removes extra space below the image */
+  margin: 40px auto 0 auto; /* 40px space at the top, auto centers horizontally */
+}
+/* Floating header image in the top left, above all content */
+.floating-header-image {
+  position: fixed;    /* Stays in the same place even when scrolling */
+  top: 10px;          /* 10px from the top */
+  left: 10px;         /* 10px from the left */
+  height: 60px;       /* Adjust size as needed */
+  width: auto;        /* Keep proportions */
+  z-index: 9999;      /* Make sure it's above everything else */
+  pointer-events: none; /* Image won't block clicks on things below */
+}
+
+/* Thin yellow line under the floating header image */
+.floating-yellow-line {
+  position: fixed;
+  top: 80px; /* 10px (top) + 60px (image height) + 10px spacing */
+  left: 20px; /* Start a bit away from the left edge */
+  width: calc(60vw - 40px); /* Only over the white area, not into yellow rectangle */
+  height: 4px; /* Thin line */
+  background: #ffc908; /* Same yellow as the rectangle */
+  z-index: 9998; /* Just below the logo */
+  border-radius: 2px;
+}
